@@ -1,0 +1,6 @@
+name = "EFMWGrid"
+version = "0.1.0"
+defaultTargets = ["EFMWGrid"]
+
+[[lean_lib]]
+name = "EFMWGrid"
