@@ -44,6 +44,6 @@ theorem alarm_at_threshold (threshold : Rat) :
 
 /-- At zero initial state and zero incoming residual, the state remains zero. -/
 theorem update_zero : update 0 0 = 0 := by
-  norm_num [update]
+  decide
 
 end EFMWGrid
