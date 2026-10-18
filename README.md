@@ -10,6 +10,10 @@ Download or clone the repository and open `index.html` locally. This is a fully 
 
 To enable the website: GitHub repository Settings → Pages → Deploy from branch → main / root. GitHub Pages deployment has not been verified.
 
+## Lean 4 formalization
+
+[Lean source](EFMWGrid.lean) · [Verification scope](LEAN_FORMALIZATION.md) · [Build workflow](.github/workflows/lean.yml). The pinned Lean 4.28.0 model checks elementary rational recurrence and threshold-alarm obligations; it does **not** prove the synthetic benchmark outcomes or EFMW-specific physical advantage. GitHub Actions build status must be checked independently.
+
 ## Research objective
 
 Freeze the test claim before execution. Compare EFMW residual memory against magnitude-EWMA, CUSUM, Kalman innovation testing, and a conventional multivariate temporal/covariance monitor. Each gets equivalent data, model capacity, false-alarm target, tuning budget and held-out evaluation. The final gate is an independent rebuild from the frozen repository and checksummed inputs.
