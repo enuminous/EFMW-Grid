@@ -21,7 +21,7 @@ def run (initial : Rat) (residuals : List Rat) : Rat :=
   residuals.foldl update initial
 
 /-- Absolute-value score from a rational residual-memory state. -/
-def score (memory : Rat) : Rat := abs memory
+def score (memory : Rat) : Rat := if memory < 0 then -memory else memory
 
 /-- Strict-threshold alarm, matching the JavaScript > comparison. -/
 def alarm (value threshold : Rat) : Bool := decide (value > threshold)
@@ -44,6 +44,6 @@ theorem alarm_at_threshold (threshold : Rat) :
 
 /-- At zero initial state and zero incoming residual, the state remains zero. -/
 theorem update_zero : update 0 0 = 0 := by
-  decide
+  simp [update, Rat.zero_add]
 
 end EFMWGrid
