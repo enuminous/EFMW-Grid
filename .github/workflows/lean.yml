@@ -4,12 +4,14 @@ on:
     paths:
       - 'EFMWGrid.lean'
       - 'lakefile.toml'
+      - 'lake-manifest.json'
       - 'lean-toolchain'
       - '.github/workflows/lean.yml'
   pull_request:
     paths:
       - 'EFMWGrid.lean'
       - 'lakefile.toml'
+      - 'lake-manifest.json'
       - 'lean-toolchain'
       - '.github/workflows/lean.yml'
   workflow_dispatch:
@@ -22,3 +24,5 @@ jobs:
       - uses: leanprover/lean-action@v1
         with:
           build: true
+      - name: Reject dependency or toolchain drift
+        run: git diff --exit-code -- lakefile.toml lake-manifest.json lean-toolchain
